@@ -21,16 +21,3 @@ def hbi_description(hbi)
 	when 5; 'extreme'
 	end
 end
-
-def grid(items, titles, options = {}, &block)
-	reset_cycle 'grid' 
-	options.merge!(:block => block, :titles => titles, :items => items)
-	options.merge!(:paginate => true) unless options.has_key?(:paginate)
-	options.merge!(:column_classes => nil) unless options.has_key?(:column_classes)
-	options.merge!(:empty_message => nil) unless options.has_key?(:empty_message)
-	concat(render(:partial => '/partials/grid', :locals => options))
-end
-
-def yes_no_format(boolean)
-	return boolean ? 'Yes' : 'No'
-end

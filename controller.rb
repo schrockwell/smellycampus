@@ -3,7 +3,7 @@ require_relative '_lib/initialize'
 ignore /(Gemfile|Rakefile|README|LICENSE)/ # "Important" stuff
 ignore /\/[._]/ # Dotfiles and files/folders starting with underscores
 
-layout 'partials/_layout.html.erb'
+layout '_partials/layout.html.erb'
 
 helpers do
 	load File.join(File.dirname(__FILE__), '_lib', 'helpers.rb')
