@@ -1,10 +1,7 @@
 require_relative 'lib/initialize'
 
-ignore /Gemfile(\.lock)?/ # Gemfiles
-ignore /Rakefile/ # Gemfiles
-ignore /README/ # Readme
-ignore /\/\./ # dotfiles
-ignore /\/_/ # partials
+ignore /(Gemfile|Rakefile|README|LICENSE)/
+ignore /\/[._]/ # Dotfiles and _partials
 ignore /\/lib/ # Ruby lib
 ignore /\/db/ # SQLite and migrations
 
