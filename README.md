@@ -8,8 +8,9 @@ Setup
 
 Prerequisites:
 
-* Ruby – 1.9.x or 2.x
-* Bundler – `gem install bundler --no-ri --no-rdoc`
+* [Ruby](https://www.ruby-lang.org/en/) – 1.9.3 or 2.x
+* [RubyGems](https://rubygems.org/pages/download)
+* [Bundler](http://bundler.io/) – `gem install bundler --no-ri --no-rdoc`
 
 From the site root:
 
