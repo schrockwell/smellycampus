@@ -25,6 +25,8 @@ Once again from the site root:
 
 It's that simple. The site is generated in `/public/`.
 
+This site uses GFS weather model data from the 0:00 UTC and 12:00 UTC runs, so run every 12 hours accordingly.
+
 How It Works
 ------------
 
@@ -37,6 +39,11 @@ Development Notes
 -----------------
 
 If you are using `stasis -d` to auto-regenerate the site, you may want to comment out `HBI.update_db` in `controller.rb` so that it doesn't pull data every single time.
+
+To-Do
+---------
+
+* Support customizable forecast location with a config file
 
 More Info
 ---------
