@@ -1,18 +1,16 @@
-require_relative 'lib/initialize'
+require_relative '_lib/initialize'
 
-ignore /(Gemfile|Rakefile|README|LICENSE)/
-ignore /\/[._]/ # Dotfiles and _partials
-ignore /\/lib/ # Ruby lib
-ignore /\/db/ # SQLite and migrations
+ignore /(Gemfile|Rakefile|README|LICENSE)/ # "Important" stuff
+ignore /\/[._]/ # Dotfiles and files/folders starting with underscores
 
 layout 'partials/_layout.html.erb'
 
 helpers do
-	load File.join(File.dirname(__FILE__), 'lib', 'helpers.rb')
+	load File.join(File.dirname(__FILE__), '_lib', 'helpers.rb')
 end
 
 before 'index.html.erb' do
-	HBI.update_db
+	# HBI.update_db
 
 	@soundings = []
 

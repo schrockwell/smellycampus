@@ -1,12 +1,12 @@
 <div class="span-12">
-	<h1 class="hbi_header">Today's Horse Barn Index is <%= render 'partials/_hbi_big.html.erb', :locals => { :sounding => @soundings.first } %></h1>
+	<h1 class="hbi_header">Today's Horse Barn Index is <%= render '_partials/hbi_big.html.erb', :locals => { :sounding => @soundings.first } %></h1>
 </div>
 
 <div class="span-7">
 	<h2>Ten-Day Forecast for Storrs, CT </h2>
 
 	<% @soundings.each do |sounding| %>
-		<%= render 'partials/_hbi_small.html.erb', :locals => { :sounding => sounding } %>
+		<%= render '_partials/hbi_small.html.erb', :locals => { :sounding => sounding } %>
 	<% end %>
 
 	<h2 style="clear:left; padding-top: 0.5em;">What is this index thing?</h2>

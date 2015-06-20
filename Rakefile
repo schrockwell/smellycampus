@@ -6,10 +6,10 @@ namespace :db do
 
 	desc 'Drop database'
 	task :drop do
-		system("rm '#{File.join(File.dirname(__FILE__), 'db', 'site.sqlite3')}'")
+		system("rm '#{File.join(File.dirname(__FILE__), '_db', 'site.sqlite3')}'")
 	end
 end
 
 task :environment do
-	require_relative 'lib/initialize.rb'
+	require_relative '_lib/initialize.rb'
 end
