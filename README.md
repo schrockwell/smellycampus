@@ -23,7 +23,7 @@ Once again from the site root:
 
     stasis
 
-It's that simple.
+It's that simple. The site is generated in `/public/`.
 
 How It Works
 ------------
