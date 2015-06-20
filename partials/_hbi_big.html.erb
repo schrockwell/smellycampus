@@ -1,0 +1,5 @@
+<% index = sounding ? sounding.index : 'na' %>
+<div class="hbi_big hbi_<%=index%>">
+	<% unless index == 'na' %><%= index %><% end %>
+	(<%= hbi_description(index).upcase %>)
+</div>
