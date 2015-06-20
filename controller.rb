@@ -10,7 +10,7 @@ helpers do
 end
 
 before 'index.html.erb' do
-	# HBI.update_db
+	HBI.update_db
 
 	@soundings = []
 
