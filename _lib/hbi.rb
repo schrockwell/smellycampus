@@ -1,5 +1,6 @@
 require 'net/http'
 require 'uri'
+require 'timeout'
 
 class Float
 	def sign
@@ -157,20 +158,26 @@ class HBI
 	
 	end
 	Site = 'kijd' # Willimantic
+	BearingFrom = 20 # NNE
 	GfsHours = [0, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240] # avn
 	RucHours = [0, 3, 6, 9, 12] # ruc
-	BearingFrom = 20 # NNE
 	Days = 10
 	#Hour = '12:00' # 8 AM
 	Hour = '24:00' # 8 PM
+	ReadTimeout = 10 # sec
 		
 	def self.update_db	    
 		GfsHours.each do |hour|
 			puts "Calculating for hour #{hour}..."
 
 			begin
-				params = HBI.download_data('avn', hour, Site)
+				Timeout::timeout(ReadTimeout) do
+					params = HBI.download_data('avn', hour, Site)
+				end
 				hbi = HBI.calculate(params, BearingFrom)
+			rescue Timeout::Error
+				puts "Timeout downloading model data for hour #{hour}; the site is probably down"
+				next
 			rescue
 				puts "Error calculating HBI; most likely the model output isn't available yet"
 				next

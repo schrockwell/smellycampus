@@ -20,13 +20,13 @@ From the site root:
 Site Generation
 ---------------
 
-Once again from the site root:
+From the site root:
 
-    stasis
+    rake
 
-It's that simple. The site is generated in `/public/`.
+It's that simple. The site is temporarily generated in `/_output/`, then copied over to `/public/` when complete.
 
-This site uses GFS weather model data from the 0:00 UTC and 12:00 UTC runs, so run every 12 hours accordingly.
+This site uses GFS weather model data from the 0:00 UTC and 12:00 UTC runs, so run every 12 hours accordingly – recommended at 6Z and 18Z.
 
 How It Works
 ------------

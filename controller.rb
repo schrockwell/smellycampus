@@ -2,6 +2,7 @@ require_relative '_lib/initialize'
 
 ignore /(Gemfile|Rakefile|README|LICENSE)/ # "Important" stuff
 ignore /\/[._]/ # Dotfiles and files/folders starting with underscores
+ignore /\/public/ # public dir (duh)
 
 layout '_partials/layout.html.erb'
 
