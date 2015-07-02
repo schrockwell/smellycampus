@@ -171,6 +171,7 @@ class HBI
 			puts "Calculating for hour #{hour}..."
 
 			begin
+				params = nil
 				Timeout::timeout(ReadTimeout) do
 					params = HBI.download_data('avn', hour, Site)
 				end
@@ -178,8 +179,9 @@ class HBI
 			rescue Timeout::Error
 				puts "Timeout downloading model data for hour #{hour}; the site is probably down"
 				next
-			rescue
+			rescue Exception => ex
 				puts "Error calculating HBI; most likely the model output isn't available yet"
+				puts ex.message
 				next
 			end
 
