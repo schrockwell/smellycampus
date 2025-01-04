@@ -22,4 +22,16 @@ module LiquidFilters
   def pct(value)
     "#{(value * 100).to_i.round}%"
   end
+
+  def hbi_trmnl_class(hbi)
+    case hbi
+    when 0; 'bg-gray-7'
+    when 1; 'bg-gray-6'
+    when 2; 'bg-gray-5'
+    when 3; 'bg-gray-4'
+    when 4; 'bg-gray-3 text--white'
+    when 5; 'bg-gray-2 text--white'
+    else; 'bg-gray-7'
+    end
+  end
 end

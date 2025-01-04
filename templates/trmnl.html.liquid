@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://usetrmnl.com/css/latest/plugins.css">
+    <script src="https://usetrmnl.com/js/latest/plugins.js"></script>
+    <style>
+      .text--white {
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="environment trmnl">
+    <div class="screen">
+      <div class="view view--full">
+        <div class="layout layout--col">
+          <div style="margin-bottom: 1em; display: flex; align-items: center;">
+            <span class="title" style="margin-right: 0.2em">Today's Horse Barn Index is</span>
+            <span class="title {{ today.hbi | hbi_trmnl_class }}" style="padding: 0.25em 0.5em; border-radius: 10px;">
+              {{ today.hbi }}
+              ({{ today.hbi | hbi_description | upcase }})
+            </span>
+          </div>
+
+          <div class="grid grid--cols-4">
+            {% for forecast in forecasts %}
+              <div class="{{ forecast.hbi | hbi_trmnl_class }}" style="text-align: center; padding: 1em; border-radius: 10px;">
+                <span class="label">
+                  {{ forecast.time | hbi_small_date }}
+                </span>
+                <span class="label" style="font-size: 4em; line-height: 1em; padding-top: 0.2em">
+                  {{ forecast.hbi }}
+                </span>
+                <span class="label">
+                  {{ forecast.hbi | hbi_description | upcase }}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="title_bar">
+          <span class="title">Storrs Odor Watch</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

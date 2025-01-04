@@ -6,6 +6,7 @@ GEM
     liquid (5.6.0)
       bigdecimal
       strscan
+    ostruct (0.6.1)
     strscan (3.1.2)
 
 PLATFORMS
@@ -15,6 +16,7 @@ PLATFORMS
 DEPENDENCIES
   base64
   liquid (~> 5.5)
+  ostruct
 
 BUNDLED WITH
    2.5.16
