@@ -23,15 +23,21 @@ module LiquidFilters
     "#{(value * 100).to_i.round}%"
   end
 
-  def hbi_trmnl_class(hbi)
+  def hbi_bg_trmnl_class(hbi)
     case hbi
     when 0; 'bg-gray-7'
     when 1; 'bg-gray-6'
     when 2; 'bg-gray-5'
     when 3; 'bg-gray-4'
-    when 4; 'bg-gray-3 text--white'
-    when 5; 'bg-gray-2 text--white'
+    when 4; 'bg-gray-2'
+    when 5; 'bg-black'
     else; 'bg-gray-7'
+    end
+  end
+  def hbi_text_trmnl_class(hbi)
+    case hbi
+    when 4, 5; 'text--white'
+    else; ''
     end
   end
 end
