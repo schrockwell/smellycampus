@@ -27,6 +27,8 @@ class HBI
 
 		FORECAST_HOURS.map do |hour|
 			Prediction.find(lines, hour, params)
+		end.select do |pred|
+			pred.valid_at.to_date >= Date.today
 		end
 	end
 
