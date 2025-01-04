@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'stasis'
-gem 'activerecord'
-gem 'sqlite3'
+gem 'base64'
+gem 'liquid', '~> 5.5'

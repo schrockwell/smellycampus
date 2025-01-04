@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>The Storrs Odor Watch</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styles/blueprint/screen.css"
+      media="screen,projection" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styles/blueprint/print.css"
+      media="print" />
+      <!-- [if IE
+        ]><link    rel="stylesheet"  type="text/css"href="styles/blueprint/ie.css"    media="screen,projection"    /><![endif] -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styles/default.css" />
+  </head>
+  <body>
+    <div id="banner_bg">
+      <div class="container" id="banner"></div>
+    </div>
+    <div class="container">
+      <div class="span-12">
+        <h1 class="hbi_header">
+          Today's Horse Barn Index is
+
+          <div class="hbi_big hbi_{{ today.hbi | default: 'na' }}">
+            {{ today.hbi | default: 'N/A' }}
+            ({{ today.hbi | hbi_description | upcase }})
+          </div>
+        </h1>
+      </div>
+
+      <div class="span-7">
+        <h2>Forecast for Storrs, CT
+        </h2>
+
+        {% for forecast in forecasts %}
+          <div class="hbi_small hbi_{{ forecast.hbi }}">
+            <div class="date">{{ forecast.time | hbi_small_date }}</div>
+            <div class="index">{{ forecast.hbi }}</div>
+            <div class="description">{{ forecast.hbi | hbi_description | upcase }}</div>
+          </div>
+        {% endfor %}
+
+        <h2 style="clear:left; padding-top: 0.5em;">What is this index thing?</h2>
+        <p>
+          At the University of Connecticut, there is a hill. On this hill, there are several barns. And in these barns live multifarious beasts of the domestic variety. And these beasts produce poop. Lots of it.
+        </p>
+        <p>
+          <strong>The Horse Barn Index (HBI) is a composite atmospheric parameter designed to express the likelihood that the Storrs campus will be inundated by stinky cow farts.</strong>
+          It takes into account variables such as wind speed and direction, temperature, dew point, and the strength of the
+          <a href="http://en.wikipedia.org/wiki/Inversion_%28meteorology%29">inversion layer</a>
+          aloft. That being said, it's completely unscientific, unverified, and certainly not endorsed by the university.
+        </p>
+        <p>
+          You might say it's just a bunch of B.S.
+        </p>
+      </div>
+
+      <div class="span-5 last">
+        <h2>Potential Risks</h2>
+        <table border="0" class="rating">
+          <tr>
+            <th class="hbi_0">0</th>
+            <td>
+              <strong>NONE</strong>
+              &mdash; The cows actually absorb odors and freshen the air.</td>
+          </tr>
+          <tr>
+            <th class="hbi_1">1</th>
+            <td>
+              <strong>VERY LOW</strong>
+              &mdash; High school seniors tour campus, clueless as usual. Puppies are born and unicorns soar through the crisp air.</td>
+          </tr>
+          <tr>
+            <th class="hbi_2">2</th>
+            <td>
+              <strong>LOW</strong>
+              &mdash; Horses begin to resent cows. Dairy Bar patronage affected. Five-year-olds visiting the barns with families complain frequently.</td>
+          </tr>
+          <tr>
+            <th class="hbi_3">3</th>
+            <td>
+              <strong>MODERATE</strong>
+              &mdash; Noticeable stench likely in parts of campus. Attack squirrels take cover. Police issue excessive parking tickets.</td>
+          </tr>
+          <tr>
+            <th class="hbi_4">4</th>
+            <td>
+              <strong>HIGH</strong>
+              &mdash; Shirt collars placed over noses and mouths. Discernable haze of stink-rays. Lecture attendance down. Even the cows start to notice.</td>
+          </tr>
+          <tr>
+            <th class="hbi_5">5</th>
+            <td>
+              <strong>EXTREME</strong>
+              &mdash; Freshmen venturing outside perish in seconds. Geese consider never returning. West Virginia scores again.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <div class="span-12 last">
+        <hr/>
+        <p style="color: #999">
+          Created by
+          <a href="http://rockwellschrock.com/">Rockwell Schrock</a>,      
+          UConn class of 2010. Sadly, the Storrs Odor Watch is not affiliated
+          with the University of Connecticut. Generated {{ now | date: "%A, %B %d, %Y" }}.
+        </p>
+      </div>
+    </div>
+    <!-- Google analytics -->
+    <script type="text/javascript">
+      var gaJsHost =
+        "https:" == document.location.protocol ? "https://ssl." : "http://www.";
+      document.write(
+        unescape(
+          "%3Cscript src='" +
+            gaJsHost +
+            "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"
+        )
+      );
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-4760872-8");
+        pageTracker._trackPageview();
+      } catch (err) {}
+    </script>
+  </body>
+</html>

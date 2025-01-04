@@ -1,0 +1,188 @@
+/*************************************************
+ *  GENERAL
+ *************************************************/
+
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+hr {
+  margin: 1.5em 0;
+}
+
+a {
+  color: #06c;
+}
+
+/*************************************************
+ *  BANNER LAYOUT
+ *************************************************/
+
+div#banner_bg {
+  height: 187px;
+  background-image: url(../images/banner_bg.png);
+  background-repeat: repeat-x;
+  margin-bottom: 1.5em;
+}
+
+div#banner {
+  height: 187px;
+  background-image: url(../images/banner.png);
+  background-repeat: repeat-x;
+}
+
+/*************************************************
+ *  HEADER
+ *************************************************/
+
+h1.hbi_header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+/*************************************************
+ *  HBI COLORS
+ *************************************************/
+
+.hbi_0 {
+  background-color: #aaa;
+  color: #fff;
+}
+.hbi_1 {
+  background-color: #4a0;
+  color: #fff;
+}
+.hbi_2 {
+  background-color: #09f;
+  color: #fff;
+}
+.hbi_3 {
+  background-color: #f90;
+  color: #fff;
+}
+.hbi_4 {
+  background-color: #c00;
+  color: #fff;
+}
+.hbi_5 {
+  background-color: #909;
+  color: #fff;
+}
+.hbi_na {
+  background-color: #ddd;
+  color: #666;
+}
+
+/*************************************************
+ *  BIG HBI
+ *************************************************/
+
+div.hbi_big {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+}
+
+/*************************************************
+ *  SMALL HBI
+ *************************************************/
+
+div.hbi_small {
+  display: block;
+  float: left;
+  padding: 0.5em 0.25em;
+  margin: 0 1em 1.5em 0;
+  text-align: center;
+  width: 100px;
+}
+
+div.hbi_small div.date {
+  height: 1em;
+}
+
+div.hbi_small div.index {
+  font-size: 3em;
+}
+
+div.hbi_small div.description {
+  height: 1.5em;
+}
+
+/*************************************************
+ *  RATING TABLE
+ *************************************************/
+
+table.rating th {
+  font-size: 3em;
+  padding: 0.1em 0.5em;
+}
+
+table.rating td {
+  padding: 0.5em 2em;
+  vertical-align: top;
+}
+
+/*************************************************
+ *  GRID
+ *************************************************/
+
+table.grid {
+  border: 1px solid #dddddd;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+table.grid th,
+table.grid td {
+  padding: 0.2em 1em;
+}
+
+table.grid th {
+  background-color: #eeeeee;
+  font-weight: bold;
+}
+
+table.grid td.actions {
+  text-align: right;
+}
+
+/*************************************************
+ *  PAGINATION
+ *************************************************/
+
+.pagination {
+  text-align: center;
+}
+
+.pagination .prev_page,
+.pagination .next_page {
+  padding: 0.25em 1em;
+  border: 1px solid #89c6f8;
+  background-color: #eef8ff;
+}
+
+.pagination a {
+  padding: 0.25em 0.5em;
+  border: 1px solid #89c6f8;
+  background-color: #eef8ff;
+}
+
+.pagination .prev_page {
+  float: left;
+}
+
+.pagination .next_page {
+  float: right;
+}
+
+.pagination .disabled,
+.pagination .current {
+  color: #999999;
+  border-color: #dddddd;
+  background-color: #ffffff;
+}

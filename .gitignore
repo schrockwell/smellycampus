@@ -1,3 +1,2 @@
-*.sqlite3
-/public/*
-/_output/*
+/_site
+.DS_Store
