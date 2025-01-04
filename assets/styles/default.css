@@ -152,37 +152,13 @@ table.grid td.actions {
 }
 
 /*************************************************
- *  PAGINATION
+ *  UTILITIES
  *************************************************/
 
-.pagination {
-  text-align: center;
+.text-right {
+  text-align: right;
 }
 
-.pagination .prev_page,
-.pagination .next_page {
-  padding: 0.25em 1em;
-  border: 1px solid #89c6f8;
-  background-color: #eef8ff;
-}
-
-.pagination a {
-  padding: 0.25em 0.5em;
-  border: 1px solid #89c6f8;
-  background-color: #eef8ff;
-}
-
-.pagination .prev_page {
-  float: left;
-}
-
-.pagination .next_page {
-  float: right;
-}
-
-.pagination .disabled,
-.pagination .current {
-  color: #999999;
-  border-color: #dddddd;
-  background-color: #ffffff;
+.hidden {
+  display: none;
 }

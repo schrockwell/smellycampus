@@ -3,12 +3,8 @@ module LiquidFilters
     if date.to_date == Date.today
       'Today'
     else
-      date.strftime('%a, %b %d') # e.g. Mon, Jan 01
+      date.strftime('%a, %b %-d') # e.g. Mon, Jan 1
     end
-  end
-  
-  def sounding_time(time)
-    time.utc.strftime('%b %d %HZ')
   end
   
   def hbi_description(hbi)
@@ -21,5 +17,9 @@ module LiquidFilters
     when 4; 'high'
     when 5; 'extreme'
     end
+  end
+
+  def pct(value)
+    "#{(value * 100).to_i.round}%"
   end
 end

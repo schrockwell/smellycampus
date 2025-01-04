@@ -17,6 +17,7 @@ input_files = [
 FileUtils.rm_rf(output_dir)
 FileUtils.mkdir_p(output_dir)
 FileUtils.cp_r('assets/images', output_dir)
+FileUtils.cp_r('assets/scripts', output_dir)
 FileUtils.cp_r('assets/styles', output_dir)
 
 puts 'Downloading forecasts...'

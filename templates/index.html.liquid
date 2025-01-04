@@ -15,11 +15,13 @@
       href="styles/blueprint/print.css"
       media="print" />
       <!-- [if IE
-        ]><link    rel="stylesheet"  type="text/css"href="styles/blueprint/ie.css"    media="screen,projection"    /><![endif] -->
+      ]><link    rel="stylesheet"  type="text/css"href="styles/blueprint/ie.css"    media="screen,projection"    /><![endif] -->
     <link
       rel="stylesheet"
       type="text/css"
       href="styles/default.css" />
+
+    <script src="scripts/default.js" async></script>
   </head>
   <body>
     <div id="banner_bg">
@@ -62,6 +64,30 @@
         <p>
           You might say it's just a bunch of B.S.
         </p>
+
+        <button id="toggle_components_button" style="margin-bottom: 0.5em">Show forecast breakdown</button>
+        <table class="grid hidden" id="components_table">
+          <tr>
+            <th>Day</th>
+            <th class="text-right">Wind</th>
+            <th class="text-right">RH</th>
+            <th class="text-right">Temp</th>
+            <th class="text-right">CINH</th>
+            <th class="text-right">Total</th>
+            <th class="text-right">HBI</th>
+          </tr>
+          {% for forecast in forecasts %}
+            <tr>
+              <td>{{ forecast.time | date: '%b %-d' }}</td>
+              <td class="text-right">{{ forecast.components.wind | pct }}</td>
+              <td class="text-right">{{ forecast.components.humidity | pct }}</td>
+              <td class="text-right">{{ forecast.components.temp | pct }}</td>
+              <td class="text-right">{{ forecast.components.cinh | pct }}</td>
+              <td class="text-right">{{ forecast.components.total | pct }}</td>
+              <td class="text-right">{{ forecast.hbi }}</td>
+            </tr>
+          {% endfor %}
+        </table>
       </div>
 
       <div class="span-5 last">
@@ -111,29 +137,11 @@
         <hr/>
         <p style="color: #999">
           Created by
-          <a href="http://rockwellschrock.com/">Rockwell Schrock</a>,      
+          <a href="http://rockwellschrock.com/">Rockwell Schrock</a>,                            
           UConn class of 2010. Sadly, the Storrs Odor Watch is not affiliated
           with the University of Connecticut. Generated {{ now | date: "%A, %B %d, %Y" }}.
         </p>
       </div>
     </div>
-    <!-- Google analytics -->
-    <script type="text/javascript">
-      var gaJsHost =
-        "https:" == document.location.protocol ? "https://ssl." : "http://www.";
-      document.write(
-        unescape(
-          "%3Cscript src='" +
-            gaJsHost +
-            "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"
-        )
-      );
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-4760872-8");
-        pageTracker._trackPageview();
-      } catch (err) {}
-    </script>
   </body>
 </html>
