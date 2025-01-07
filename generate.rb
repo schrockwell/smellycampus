@@ -3,6 +3,7 @@
 require 'fileutils'
 require 'json'
 require 'liquid'
+require 'trmnl_preview'
 
 require_relative 'lib/hbi'
 require_relative 'lib/liquid_filters'
@@ -12,7 +13,6 @@ template_dir = 'templates'
 output_dir = '_site'
 input_files = [
   'index.html.liquid',
-  'trmnl.html.liquid'
 ]
 
 # Wipe the output directory and copy assets over
@@ -37,8 +37,13 @@ input_files.each do |input_file|
   end
 end
 
-File.open(File.join(output_dir, 'trmnl.json'), 'w') do |f|
+# Save the data.json where trmnl_preview expects it: tmp/data.json
+FileUtils.mkdir_p('tmp')
+File.open(File.join('tmp', 'data.json'), 'w') do |f|
   f.write(data.to_json)
 end
+
+context = TRMNLPreview::Context.new('.')
+File.write(File.join(output_dir, 'trmnl.html'), context.render_full_page('full'))
 
 puts 'Done!'

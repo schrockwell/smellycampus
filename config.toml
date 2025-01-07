@@ -1,0 +1,5 @@
+strategy = "polling"
+url = "./_site/trmnl.json"
+
+[custom_filters]
+LiquidFilters = "lib/liquid_filters"

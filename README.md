@@ -2,6 +2,8 @@
 
 This project stinks. See the live site at [smellycamp.us](http://smellycamp.us/).
 
+There is even a [TRMNL dashboard](https://smellycamp.us/trmnl.html) which you can add to [your device](https://usetrmnl.com/) via the Screenshot plugin.
+
 ## Setup
 
 Prerequisites:

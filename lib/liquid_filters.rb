@@ -1,6 +1,12 @@
 module LiquidFilters
   def hbi_small_date(date)
-    if date.to_date == Date.today
+    if date.is_a?(String)
+      date = Date.parse(date)
+    else
+      date = date.to_date
+    end
+    
+    if date == Date.today
       'Today'
     else
       date.strftime('%a, %b %-d') # e.g. Mon, Jan 1
@@ -34,6 +40,7 @@ module LiquidFilters
     else; 'bg-gray-7'
     end
   end
+
   def hbi_text_trmnl_class(hbi)
     case hbi
     when 4, 5; 'text--white'
